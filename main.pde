@@ -1,30 +1,46 @@
 int sizev;
+Boolean drawe, drawi;
 void setup() {
   colorMode(HSB);
   sizev=3000;
-	size(3000, 3000);
-  background(0);
-  gas();
-  filter(BLUR, 10);
-  stars();
+  size(3000, 3000);
+  drawe=false;
+  drawi=true;
+  textSize(30);
+}
+void draw() {
+  if (drawe==false) {
+    background(0);
+    text("Loading...",700,400);
+  } else {
+    if (drawi==true) {
+    background(0);
+      gas();
+      filter(BLUR, 10);
+      stars();
+      drawi=false;
+    }
+  }
+  drawe=true;
 }
 
+
 void stars() {
-  for (x=0;x<=sizev;x++) {
-    for (y=0;y<=sizev;y++) {
+  for (int x=0;x<=sizev;x++) {
+    for (int y=0;y<=sizev;y++) {
       if (int(random(1000))==1) {
         stroke(random(255),100,20);
         ellipse(x,y,random(3),random(3));
         if (int(random(200))==1) {
-          rx=int(random(200)-100)+x;
-          ry=int(random(200)-100)+y;
+          int rx=int(random(200)-100)+x;
+          int ry=int(random(200)-100)+y;
           stroke(random(255),100,20);
           ellipse(rx,ry,random(3),random(3));
           stroke(255,50);
           line(rx,ry,x,y);
           if (int(random(3))==1) {
-            r2x=int(random(200)-100)+x;
-            r2y=int(random(200)-100)+y;
+            int r2x=int(random(200)-100)+x;
+            int r2y=int(random(200)-100)+y;
             stroke(random(255),100,20);
             ellipse(r2x,r2y,random(3),random(3));
             stroke(255,50);
@@ -40,8 +56,8 @@ void stars() {
 }
 
 void gas() {
-  for (x=0;x<=sizev;x++) {
-    for (y=0;y<=sizev;y++) {
+  for (int x=0;x<=sizev;x++) {
+    for (int y=0;y<=sizev;y++) {
       if (int(random(1500))==1) {
         stroke(0,0);
         fill(random(255),255,100,10);
