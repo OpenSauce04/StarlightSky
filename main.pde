@@ -31,24 +31,24 @@ void stars() {
       if (int(random(1000))==1) {
         stroke(random(255),100,20);
         ellipse(x,y,random(3),random(3));
-        if (int(random(200))==1) {
+        if (int(random(150))==1) {
           int rx=int(random(200)-100)+x;
           int ry=int(random(200)-100)+y;
           stroke(random(255),100,20);
           ellipse(rx,ry,random(3),random(3));
           stroke(255,50);
           line(rx,ry,x,y);
-          if (int(random(3))==1) {
+          if (int(random(20))!=1) {
             int r2x=int(random(200)-100)+x;
             int r2y=int(random(200)-100)+y;
             stroke(random(255),100,20);
             ellipse(r2x,r2y,random(3),random(3));
             stroke(255,50);
             line(r2x,r2y,rx,ry);
-            if (int(random(3))==1) {
+            if (int(random(4))==1) {
               line(r2x,r2y,x,y);
             }
-            if (int(random(3))==1) {
+            if (int(random(2))==1) {
               int r3x=int(random(200)-100)+x;
               int r3y=int(random(200)-100)+y;
               stroke(random(255),100,20);
