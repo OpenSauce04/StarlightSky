@@ -1,7 +1,11 @@
 require 'webrick'
-require 'launchy'
+if ARGV.first!="--no-launchy"
+  require 'launchy'
+end
 server = WEBrick::HTTPServer.new :Port => 8000
 server.mount "/", WEBrick::HTTPServlet::FileHandler, './'
 trap('INT') { server.stop }
-Launchy.open("http://localhost:8000")
+if ARGV.first!="--no-launchy"
+  Launchy.open("http://localhost:8000")
+end
 server.start
