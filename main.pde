@@ -48,6 +48,17 @@ void stars() {
             if (int(random(3))==1) {
               line(r2x,r2y,x,y);
             }
+            if (int(random(3))==1) {
+              int r3x=int(random(200)-100)+x;
+              int r3y=int(random(200)-100)+y;
+              stroke(random(255),100,20);
+              ellipse(r3x,r3y,random(3),random(3));
+              stroke(255,50);
+              line(r3x,r3y,r2x,r2y);
+              if (int(random(4))!=1) {
+                line(r3x,r3y,rx,ry);
+              }
+            }
           }
         }
       }
